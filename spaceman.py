@@ -36,10 +36,12 @@ def user_input(prompt):
 
 secret_word = "spaceman"
 wrong_guesses = []
+space_mark = " _ "
 
 missed_chances = 0
 chances = 7
 
+# array of letters >> identofy the index and replace it with letter
 
 def game_goes_on():
     while chances >= missed_chances:
@@ -49,6 +51,9 @@ def game_goes_on():
         exit()
 
 def guessing():
+    # printing underscore
+    print(space_mark * len(secret_word)) 
+    # asking input
     letter = user_input("gimme letter>> ")
     if letter in secret_word:
         print("yes")
@@ -64,6 +69,8 @@ def spaceman():
     game_goes_on()
 
 spaceman()
+
+
 
 # MVP
 """ 
