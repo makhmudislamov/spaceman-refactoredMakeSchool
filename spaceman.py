@@ -35,6 +35,17 @@ def user_input(prompt):
     return user_input
 
 secret_word = "spaceman"
+wrong_guesses = []
+
+missed_chances = 0
+chances = 7
+
+def chance_counter():
+    while chances > missed_chances:
+        guessing()
+    else:
+        print("lost")
+        exit()
 
 def guessing():
     letter = user_input("gimme letter>> ")
@@ -45,7 +56,10 @@ def guessing():
     return letter
 
 
-guessing()
+
+
+# guessing()
+chance_counter()
 
 
 
