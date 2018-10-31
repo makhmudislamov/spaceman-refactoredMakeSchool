@@ -40,7 +40,8 @@ wrong_guesses = []
 missed_chances = 0
 chances = 7
 
-def chance_counter():
+
+def game_rule():
     while chances > missed_chances:
         guessing()
     else:
@@ -53,13 +54,22 @@ def guessing():
         print("yes")
     else:
         print("no")
+        wrong_guesses.append(letter)
+        print(wrong_guesses)
     return letter
 
 
+# def chance_counter(letter, missed_chances):
+#     if letter not in secret_word:
+#         missed_chances += 1
+        
+#     else:
+#         return
 
 
+game_rule()
 # guessing()
-chance_counter()
+
 
 
 
