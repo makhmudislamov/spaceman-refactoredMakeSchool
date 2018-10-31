@@ -65,10 +65,11 @@ def spaceman():
 
 spaceman()
 
-# def chance_counter(letter, missed_chances):
-#     if letter not in secret_word:
-#         missed_chances += 1
-        
-#     else:
-#         return
+# MVP
+""" 
+1. program counts missed chances
+2. program displays _ _ _ _ _ _
+3. program stops when missed chances > chances
+
+"""
 
