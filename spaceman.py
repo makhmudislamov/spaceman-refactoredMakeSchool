@@ -41,8 +41,8 @@ missed_chances = 0
 chances = 7
 
 
-def game_rule():
-    while chances > missed_chances:
+def game_goes_on():
+    while chances >= missed_chances:
         guessing()
     else:
         print("lost")
@@ -54,10 +54,16 @@ def guessing():
         print("yes")
     else:
         print("no")
+        # missed_chances = missed_chances +1
         wrong_guesses.append(letter)
         print(wrong_guesses)
     return letter
 
+def spaceman():
+    guessing()
+    game_goes_on()
+
+spaceman()
 
 # def chance_counter(letter, missed_chances):
 #     if letter not in secret_word:
@@ -66,12 +72,3 @@ def guessing():
 #     else:
 #         return
 
-
-game_rule()
-# guessing()
-
-
-
-
-
-# def game_start():
