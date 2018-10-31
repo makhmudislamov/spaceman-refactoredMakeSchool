@@ -37,5 +37,4 @@ def user_input(prompt):
     return user_input
 
 
-def game_start():
-    
+# def game_start():
