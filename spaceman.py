@@ -29,12 +29,25 @@
 # count >> counts 7 lives
 # user input >> gets user input
 
-word = "astronaut"
-
 # getting user input
 def user_input(prompt):
     user_input = input(prompt)
     return user_input
+
+secret_word = "spaceman"
+
+def guessing():
+    letter = user_input("gimme letter>> ")
+    if letter in secret_word:
+        print("yes")
+    else:
+        print("no")
+    return letter
+
+
+guessing()
+
+
 
 
 # def game_start():
