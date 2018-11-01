@@ -1,4 +1,4 @@
-
+import random
 # ============== RULES/REQS ================
 
 # show blanks _ _ _ _ _ _ _
@@ -34,6 +34,9 @@ def user_input(prompt):
     user_input = input(prompt)
     return user_input
 
+
+# words_list = ["wonderland", "aquarium", "croatia"]
+# secret_word = random.shuffle(words_list)
 secret_word = "spaceman"
 wrong_guesses = []
 space_mark = " _ "
@@ -58,16 +61,16 @@ def guessing():
     return letter
 
 
-# def game_goes_on():
-#     while chances > missed_chances:
-#         guessing()
-#     else:
-#         print("lost")
-#         exit()
+def game_goes_on():
+    while chances > missed_chances:
+        guessing()
+    else:
+        print("lost")
+        exit()
 
 def spaceman():
     guessing()
-    # game_goes_on()
+    game_goes_on()
 
 spaceman()
 
