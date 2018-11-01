@@ -38,19 +38,12 @@ secret_word = "spaceman"
 wrong_guesses = []
 space_mark = " _ "
 
+
 missed_chances = 0
 chances = 7
 
-# array of letters >> identofy the index and replace it with letter
-
-def game_goes_on():
-    while chances >= missed_chances:
-        guessing()
-    else:
-        print("lost")
-        exit()
-
 def guessing():
+    missed_chances = 0
     # printing underscore
     print(space_mark * len(secret_word)) 
     # asking input
@@ -59,14 +52,22 @@ def guessing():
         print("yes")
     else:
         print("no")
-        # missed_chances = missed_chances +1
+        missed_chances +=1
         wrong_guesses.append(letter)
         print(wrong_guesses)
     return letter
 
+
+# def game_goes_on():
+#     while chances > missed_chances:
+#         guessing()
+#     else:
+#         print("lost")
+#         exit()
+
 def spaceman():
     guessing()
-    game_goes_on()
+    # game_goes_on()
 
 spaceman()
 
@@ -80,3 +81,10 @@ spaceman()
 
 """
 
+""" 
+Error handling
+Try except block except >> catches error
+Wrong type of character (isDigit, ischar is in alphabet) >> should be only character
+Check if the input is one letter >> 
+Repeated input
+"""

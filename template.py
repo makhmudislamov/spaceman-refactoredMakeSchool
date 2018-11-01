@@ -1,62 +1,71 @@
 import random
 
+# def intro_screen():
+#   name = input("gimme ur name>> ")
+#   print("Welcome to Spaceman, " + name + "!")
+#   print("###################################")
+#   print("You have 6 lives in this game. Start guessing")
+#   hangman()
+#   print()
 
-def load_word():
-   f = open('words.txt', 'r')
-   words_list = f.readlines()
-   f.close()
-
-   words_list = words_list[0].split(' ')
-   secret_word = random.choice(words_list)
-   return secret_word
-
-
-def is_word_guessed(secret_word, letters_guessed):
-    '''
-    secretWord: string, the random word the user is trying to guess.  This is selected on line 9.
-    lettersGuessed: list of letters that have been guessed so far.
-    returns: boolean, True only if all the letters of secretWord are in lettersGuessed;
-      False otherwise
-    '''
-
-    # FILL IN YOUR CODE HERE...
+# def hangman():
+#   word = random.choice(["wonderland", "aquarium", "croatia"])
+#   turns = 10
+#   guessed = " "
 
 
-def get_guessed_word(secret_word, letters_guessed):
-    '''
-    secretWord: string, the random word the user is trying to guess.  This is selected on line 9.
-    lettersGuessed: list of letters that have been guessed so far.
-    returns: string, of letters and underscores.  For letters in the word that the user has
-    guessed correctly, the string should contain the letter at the correct position.  For letters
-    in the word that the user has not yet guessed, shown an _ (underscore) instead.
-    '''
-    # FILL IN YOUR CODE HERE...
+# while len(word) > 0:
+#   msg = ""
+#   missed = 0
 
+#   for letter in word:
+#     if letter in guessed:
+#       msg = msg+letter
+#     else:
+#       msg = msg + "_" + " "
+#       missed += 1
 
-def get_available_letters(letters_guessed):
-    '''
-    lettersGuessed: list of letters that have been guessed so far
-    returns: string, comprised of letters that represents what letters have not
-      yet been guessed.
-    '''
+#   if msg == word:
+#     print(msg)
+#     print("correct! word is " + word)
+#     break
 
+#   print("Guess the word: " + msg)
+#   guess = input()
 
-def spaceman(secret_word):
-    '''
-    secretWord: string, the secret word to guess.
-    Starts up a game of Spaceman in the command line.
-    * At the start of the game, let the user know how many
-      letters the secretWord contains.
-    * Ask the user to guess one letter per round.
-    * The user should receive feedback immediately after each guess
-      about whether their guess appears in the computer's word.
-    * After each round, you should also display to the user the
-      partially guessed word so far, as well as letters that the
-      user has not yet guessed.
-    '''
-    # FILL IN YOUR CODE HERE...
+#   if guess.isalpha():
+#     guessed = guessed + guess
+#   else:
+#     print("enter valid letter: ")
+#     guess = input()
+  
+#   if guess not in word:
+#     turns = turns - 1
+#     if turns == 9:
+#       print(" o")
+#     if turns == 8:
+#       print(" o")
+#     if turns == 7:
+#       print(" o")
+#     if turns == 6:
+#       print(" o")
+#     if turns == 5:
+#       print(" o")
+#     if turns == 4:
+#       print(" o")
+#     if turns == 3:
+#       print(" o")
+#     if turns == 2:
+#       print(" o")
+#     if turns == 1:
+#       print("LOST!" + word)
+#       break
 
+# intro_screen()
 
-#
-# secret_word = load_word()
-# spaceman(load_word())
+answerlist = ["wonderland", "aquarium", "croatia"]
+random.shuffle(answerlist)
+
+answer = list(answerlist[0])
+
+display = []
