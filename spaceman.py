@@ -121,4 +121,18 @@ while play_again:
 
     if attempts != 0 and '_' in blank_word:
         print(('\nYou have {} attempts left').format(attempts))
-        
+    try:
+        guess = str(input('\Please select a letter between A-Z')).lower()
+    except:
+        print('That is not valid input. Please try again.')
+        continue
+    
+    else:
+        if not guess.isalpha():
+            print('Your input was not a letter. Please try again.')
+            continue
+        elif len(guess) > 1:
+            print('That is more than one letter. Please try again.')
+            continue
+        elif guess in guessed_letters:
+            print('You made this input earlier. Please try again.')
