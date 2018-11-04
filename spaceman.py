@@ -145,6 +145,33 @@ while play_again:
         if guess not in chosen_word:
             attempts -= 1
             print(SPACEMAN[(len(SPACEMAN) - 1) - attempts])
-            
+
+        else:
+            search_more = True
+            start_search_index = 0
+            while search_more:
+                try:
+                    # checking for double letters in the word 
+                    found_at_index = chosen_word.index(guess, start_search_index)
+                    blank_word[found_at_index] = guess
+                    start_search_index = found_at_index + 1
+                except:
+                    search_more = False
+
+        print(''.join(blank_word))
+        if attempts == 0:
+            print('GAME OVER! The word was {}'.format(chosen_word))
+            print('\nDo you want to play again? Type "Yes" or "y')
+            response = input('>> ').lower()
+            if response not in ['yes', 'y']:
+                play_again = False
+                print('Thanks for playing Spaceman!')
+            break
+
+
+
+
+                
+
 
 
