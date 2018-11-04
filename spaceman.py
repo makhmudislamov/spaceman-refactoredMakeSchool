@@ -136,3 +136,15 @@ while play_again:
             continue
         elif guess in guessed_letters:
             print('You made this input earlier. Please try again.')
+            continue
+        else:
+            pass
+        
+        guessed_letters.append(guess)
+
+        if guess not in chosen_word:
+            attempts -= 1
+            print(SPACEMAN[(len(SPACEMAN) - 1) - attempts])
+            
+
+
