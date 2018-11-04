@@ -30,49 +30,49 @@ import random
 # user input >> gets user input
 
 # getting user input
-def user_input(prompt):
-    user_input = input(prompt)
-    return user_input
+# def user_input(prompt):
+#     user_input = input(prompt)
+#     return user_input
 
 
-# words_list = ["wonderland", "aquarium", "croatia"]
-# secret_word = random.shuffle(words_list)
-secret_word = "spaceman"
-wrong_guesses = []
-space_mark = " _ "
+# # words_list = ["wonderland", "aquarium", "croatia"]
+# # secret_word = random.shuffle(words_list)
+# secret_word = "spaceman"
+# wrong_guesses = []
+# space_mark = " _ "
 
 
-missed_chances = 0
-chances = 7
+# missed_chances = 0
+# chances = 7
 
-def guessing():
-    missed_chances = 0
-    # printing underscore
-    print(space_mark * len(secret_word)) 
-    # asking input
-    letter = user_input("gimme letter>> ")
-    if letter in secret_word:
-        print("yes")
-    else:
-        print("no")
-        missed_chances +=1
-        wrong_guesses.append(letter)
-        print(wrong_guesses)
-    return letter
+# def guessing():
+#     missed_chances = 0
+#     # printing underscore
+#     print(space_mark * len(secret_word)) 
+#     # asking input
+#     letter = user_input("gimme letter>> ")
+#     if letter in secret_word:
+#         print("yes")
+#     else:
+#         print("no")
+#         missed_chances +=1
+#         wrong_guesses.append(letter)
+#         print(wrong_guesses)
+#     return letter
 
 
-def game_goes_on():
-    while chances > missed_chances:
-        guessing()
-    else:
-        print("lost")
-        exit()
+# def game_goes_on():
+#     while chances > missed_chances:
+#         guessing()
+#     else:
+#         print("lost")
+#         exit()
 
-def spaceman():
-    guessing()
-    game_goes_on()
+# def spaceman():
+#     guessing()
+#     game_goes_on()
 
-spaceman()
+# spaceman()
 
 
 
@@ -91,3 +91,34 @@ Wrong type of character (isDigit, ischar is in alphabet) >> should be only chara
 Check if the input is one letter >> 
 Repeated input
 """
+SPACEMAN = (
+"""
+1st
+""",
+"""
+2nd
+""",
+"""
+3rd
+"""
+
+)
+
+print(SPACEMAN[0])
+play_again = True
+while play_again:
+
+    words_list = ['netherland', 'croatia', 'angelina']
+    chosen_word = random.choice(words_list).lower()
+    guess = None
+    # contains guessed letters
+    guessed_letters = []
+    blank_word = []
+
+    for letter in chosen_word:
+        blank_word.append('_')
+    attempts = 6
+
+    if attempts != 0 and '_' in blank_word:
+        print(('\nYou have {} attempts left').format(attempts))
+        
