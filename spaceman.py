@@ -49,7 +49,7 @@ while play_again:
 
     while attempts > 0:
 
-        if attempts != 0 and '_' in blank_word:
+        if attempts != 0 and ' _ ' in blank_word:
             print(('\nYou have {} attempts left').format(attempts))
         try:
             guess = str(input('\nPlease select a letter between A-Z')).lower()
@@ -98,7 +98,7 @@ while play_again:
                     print('Thanks for playing Spaceman!')
                 break
 
-            if '_' not in blank_word:
+            if ' _ ' not in blank_word:
                 print(('\nCongrats! {} was the hidden word').format(secret_word))
                 print('\nDo you want to play again? Type "Yes" or "y')
                 response = input('>> ').lower()
