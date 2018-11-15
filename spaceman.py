@@ -52,7 +52,7 @@ while play_again:
         if attempts != 0 and ' _ ' in blank_word:
             print(('\nYou have {} attempts left').format(attempts))
         try:
-            guess = str(input('\nPlease select a letter between A-Z')).lower()
+            guess = str(input('\nPlease select a letter between A-Z >> ')).lower()
         except:
             print('That is not valid input. Please try again.')
             continue
@@ -110,5 +110,21 @@ while play_again:
 
                 
 
+""" 
 
+      ______
+      |    |
+     |      |
+    |        |
+   |          |
+  |            |
+ |              |
+ |              |
+|                |
+|________________|
+^^^    ^^^     ^^^
+^^^    ^^^     ^^^
+^^^    ^^^     ^^^
+
+"""
 
