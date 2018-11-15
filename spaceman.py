@@ -1,6 +1,6 @@
 import random
 
-SPACEMAN = (
+SPACEMAN = [
 """
 1stanimation
 """,
@@ -19,15 +19,13 @@ SPACEMAN = (
 """
 6thanimation  
 """
-
-
-)
+]
 
 print(SPACEMAN[0])
 play_again = True
 while play_again:
 
-    words_list = ['netherland', 'croatia', 'angelina']
+    words_list = ['netherland', 'croatia', 'uzbekistan']
     chosen_word = random.choice(words_list).lower()
     guess = None
     # contains guessed letters
