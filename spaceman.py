@@ -21,19 +21,30 @@ SPACEMAN = [
 """
 ]
 
+
+# def load_word():
+   
+
 print(SPACEMAN[0])
 play_again = True
 while play_again:
+    f = open('words.txt', 'r')
+    words_list = f.readlines()
+    f.close()
 
-    words_list = ['netherland', 'croatia', 'uzbekistan']
-    chosen_word = random.choice(words_list).lower()
+    words_list = words_list[0].split(' ')
+    secret_word = random.choice(words_list)
+    # return secret_word
+    
+    # words_list = ['netherland', 'croatia', 'uzbekistan']
+    # chosen_word = random.choice(words_list).lower()
     guess = None
     # contains guessed letters
     guessed_letters = []
     blank_word = []
 
-    for letter in chosen_word:
-        blank_word.append('_')
+    for letter in secret_word:
+        blank_word.append(' _ ')
     attempts = 6
 
     while attempts > 0:
@@ -61,7 +72,7 @@ while play_again:
             
             guessed_letters.append(guess)
 
-            if guess not in chosen_word:
+            if guess not in secret_word:
                 attempts -= 1
                 print(SPACEMAN[(len(SPACEMAN) - 1) - attempts])
 
@@ -71,7 +82,7 @@ while play_again:
                 while search_more:
                     try:
                         # checking for double letters in the word 
-                        found_at_index = chosen_word.index(guess, start_search_index)
+                        found_at_index = secret_word.index(guess, start_search_index)
                         blank_word[found_at_index] = guess
                         start_search_index = found_at_index + 1
                     except:
@@ -79,7 +90,7 @@ while play_again:
 
             print(''.join(blank_word))
             if attempts == 0:
-                print(('GAME OVER! The word was {}').format(chosen_word))
+                print(('GAME OVER! The word was {}').format(secret_word))
                 print('\nDo you want to play again? Type "Yes" or "y')
                 response = input('>> ').lower()
                 if response not in ['yes', 'y']:
@@ -88,7 +99,7 @@ while play_again:
                 break
 
             if '_' not in blank_word:
-                print(('\nCongrats! {} was the hidden word').format(chosen_word))
+                print(('\nCongrats! {} was the hidden word').format(secret_word))
                 print('\nDo you want to play again? Type "Yes" or "y')
                 response = input('>> ').lower()
                 if response not in ['yes', 'y']:
