@@ -10,3 +10,5 @@
 * [X] Users can be notified when repeated input is made
 * [X] Users can be notified when non alphabetic input is made 
 
+## Video Demo
+![walkthrough](demo-spaceman.gif)
